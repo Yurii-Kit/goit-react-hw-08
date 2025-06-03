@@ -1,0 +1,37 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid #141414;
+}
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: none;
+}
+.label {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.input {
+  padding: 0.5rem;
+  border: 1px solid #161515;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.button {
+  padding: 0.5rem 1rem;
+  width: 150px;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+}
