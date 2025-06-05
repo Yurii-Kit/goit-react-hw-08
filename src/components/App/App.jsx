@@ -1,43 +1,32 @@
-import { useEffect } from 'react';
+import { useEffect, Suspense, lazy } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
-import { fetchContacts } from '../../redux/contacts/operations';
-import {
-  selectContacts,
-  selectError,
-  selectLoading,
-} from '../../redux/contacts/selectors';
-import ContactForm from '../ContactForm/ContactForm';
-import ContactList from '../ContactList/ContactList';
-import SearchBox from '../SearchBox/SearchBox';
+
 import { AppBar } from '../AppBar/AppBar';
+
+const HomePage = lazy(() => import('../../pages/Homepage/HomePage'));
+const RegisterPage = lazy(
+  () => import('../../pages/RegisterPage/RegisterPage'),
+);
+const LoginPage = lazy(() => import('../../pages/LoginPage/LoginPage'));
+const ContactsPage = lazy(
+  () => import('../../pages/ContactsPage/ContactsPage'),
+);
 
 import css from './App.module.css';
 
-function App() {
-  const dispatch = useDispatch();
-  // const contacts = useSelector(selectContacts);
-  // const loading = useSelector(selectLoading);
-  // const error = useSelector(selectError);
-  useEffect(() => {
-    dispatch(fetchContacts());
-    // .unwrap() // додаткові повідомлення про успіх або помилку
-    // .then(() => alert('Succes'))
-    // .catch(() => alert('Error fetching contacts'));
-  }, [dispatch]);
+export default function App() {
   return (
-    <>
-      <div className={css.container}>
-        <AppBar />
-        {/* <h1>Phonebook</h1>
-        <ContactForm />
-        <SearchBox />
-        {loading && <p>Loading contacts...</p>}
-        {error && <p>{error}</p>}
-        {contacts.length !== 0 && <ContactList />} */}
-      </div>
-    </>
+    <div className={css.app}>
+      <AppBar />
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
+        </Routes>
+      </Suspense>
+    </div>
   );
 }
-
-export default App;

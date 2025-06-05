@@ -16,6 +16,9 @@ export const Navigation = () => {
           Tasks
         </NavLink>
       )} */}
+      <NavLink className={css.link} to="/contacts">
+        Contacts
+      </NavLink>
     </nav>
   );
 };
