@@ -1,6 +1,5 @@
-import { createSlice, createSelector } from '@reduxjs/toolkit';
-import { fetchContacts, deleteContact, addContact } from './contactsOps';
-import { selectNameFilter } from './filtersSlice';
+import { createSlice } from '@reduxjs/toolkit';
+import { fetchContacts, deleteContact, addContact } from './operations';
 
 const slice = createSlice({
   name: 'contacts',
@@ -53,25 +52,17 @@ const slice = createSlice({
   },
 });
 
-export default slice.reducer;
-
-export const selectContacts = (state) => state.contacts.items;
-export const selectLoading = (state) => state.contacts.loading;
-export const selectError = (state) => state.contacts.error;
-
-// export const selectFilteredContacts = (state) => {
-//   const listItems = selectContacts(state);
-//   const filter = selectNameFilter(state);
-//   return listItems.filter((listItem) =>
-//     listItem.name.toLowerCase().includes(filter.toLowerCase()),
-//   );
-// };
+// export const selectContacts = (state) => state.contacts.items;
+// export const selectLoading = (state) => state.contacts.loading;
+// export const selectError = (state) => state.contacts.error;
 
 // Мемоізований селектор
-export const selectFilteredContacts = createSelector(
-  [selectContacts, selectNameFilter],
-  (listItems, filter) =>
-    listItems.filter((listItem) =>
-      listItem.name.toLowerCase().includes(filter.toLowerCase()),
-    ),
-);
+// export const selectFilteredContacts = createSelector(
+//   [selectContacts, selectNameFilter],
+//   (listItems, filter) =>
+//     listItems.filter((listItem) =>
+//       listItem.name.toLowerCase().includes(filter.toLowerCase()),
+//     ),
+// );
+
+export default slice.reducer;
