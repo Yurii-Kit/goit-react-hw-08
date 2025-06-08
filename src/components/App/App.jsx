@@ -1,8 +1,10 @@
-import { useEffect, Suspense, lazy } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 
-import { AppBar } from '../AppBar/AppBar';
+import Layout from '../Layout/Layout';
+import { refreshUser } from '../../redux/auth/operations';
+import { selectIsRefreshing } from '../../redux/auth/selectors';
 
 const HomePage = lazy(() => import('../../pages/Homepage/HomePage'));
 const RegisterPage = lazy(
@@ -13,12 +15,19 @@ const ContactsPage = lazy(
   () => import('../../pages/ContactsPage/ContactsPage'),
 );
 
-import css from './App.module.css';
+// import css from './App.module.css';
 
 export default function App() {
-  return (
-    <div className={css.app}>
-      <AppBar />
+  const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+  return isRefreshing ? (
+    <strong>Refreshing user...</strong>
+  ) : (
+    <Layout>
       <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -27,6 +36,6 @@ export default function App() {
           <Route path="/contacts" element={<ContactsPage />} />
         </Routes>
       </Suspense>
-    </div>
+    </Layout>
   );
 }

@@ -27,14 +27,14 @@ const ContactsPage = () => {
     [dispatch],
   );
   return (
-    <div>
+    <>
       <h1>Phonebook</h1>
       <ContactForm />
       <SearchBox />
       {loading && <p>Loading contacts...</p>}
       {error && <p>{error}</p>}
       {contacts.length !== 0 && <ContactList />}
-    </div>
+    </>
   );
 };
 
