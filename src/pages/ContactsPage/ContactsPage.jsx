@@ -16,12 +16,16 @@ const ContactsPage = () => {
   const contacts = useSelector(selectContacts);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
-  useEffect(() => {
-    dispatch(fetchContacts())
-      .unwrap() // додаткові повідомлення про успіх або помилку
-      .then(() => alert('Succes'))
-      .catch(() => alert('Error fetching contacts'));
-  }, [dispatch]);
+  useEffect(
+    () => {
+      dispatch(fetchContacts());
+    },
+    //     .unwrap() // додаткові повідомлення про успіх або помилку
+    //     .then(() => alert('Succes'))
+    //     .catch(() => alert('Error fetching contacts'));
+    // },
+    [dispatch],
+  );
   return (
     <div>
       <h1>Phonebook</h1>
