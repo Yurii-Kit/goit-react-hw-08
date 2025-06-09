@@ -5,11 +5,13 @@ import { changeFilter } from '../../redux/filters/slice';
 import { selectNameFilter } from '../../redux/filters/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { IoMdClose } from 'react-icons/io';
+
 export default function SearchBox() {
   const dispatch = useDispatch();
   const filterNameValue = useSelector(selectNameFilter);
   const [inputValue, setInputValue] = useState(filterNameValue);
-  const [debouncedFilter] = useDebounce(inputValue, 1000);
+  const [debouncedFilter] = useDebounce(inputValue, 350);
 
   const handleFilterChange = (event) => {
     setInputValue(event.target.value);
@@ -31,6 +33,12 @@ export default function SearchBox() {
           value={inputValue}
           onChange={handleFilterChange}
           placeholder="Search..."
+        />
+        <IoMdClose
+          className={css.icon}
+          onClick={() => {
+            setInputValue('');
+          }}
         />
       </label>
     </div>

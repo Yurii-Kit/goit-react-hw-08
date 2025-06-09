@@ -36,6 +36,7 @@ export default function ContactForm() {
             name="name"
             className={css.input}
             id={`${fieldId}-name`}
+            placeholder="Yurii Kit"
           />
           <ErrorMessage name="name" component="span" className={css.error} />
 
@@ -47,6 +48,7 @@ export default function ContactForm() {
             name="number"
             className={css.input}
             id={`${fieldId}-number`}
+            placeholder="38XXXXXXXXXX"
           />
           <ErrorMessage name="number" component="span" className={css.error} />
         </fieldset>

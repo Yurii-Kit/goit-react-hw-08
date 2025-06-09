@@ -5,8 +5,12 @@ export const selectNameFilter = (state) => state.filters.name;
 
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectNameFilter],
-  (listItems, filter) =>
-    listItems.filter((listItem) =>
-      listItem.name.toLowerCase().includes(filter.toLowerCase()),
-    ),
+  (listItems, filter) => {
+    const normalized = filter.toLowerCase();
+    return listItems.filter(
+      (listItem) =>
+        listItem.name.toLowerCase().includes(normalized) ||
+        listItem.number.includes(filter),
+    );
+  },
 );
