@@ -27,7 +27,7 @@ export default function Modal({ onClose, onConfirm, contact, action }) {
 
   return (
     <div className={css.overlay} onClick={onClose}>
-      <div className={css.modal} onClick={(e) => e.stopPropagation()}>
+      <div className={css.modal} onClick={(event) => event.stopPropagation()}>
         {action === 'edit' ? (
           <>
             <h2>Edit contact</h2>

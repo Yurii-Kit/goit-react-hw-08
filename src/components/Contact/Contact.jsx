@@ -82,10 +82,11 @@ export default function Contact({ listItem }) {
     <>
       <div className={css.contactWrapper}>
         <p>
-          <FaUser /> <span className={css.text}>{listItem.name}</span>
+          <FaUser />
+          <span className={css.text}>{listItem.name}</span>
         </p>
         <p>
-          <BsFillTelephoneFill />{' '}
+          <BsFillTelephoneFill />
           <span className={css.text}>{listItem.number}</span>
         </p>
       </div>
