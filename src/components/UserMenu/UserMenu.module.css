@@ -8,3 +8,13 @@
 .username {
   font-weight: 700;
 }
+
+.userMenuBtn {
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: rgba(51, 51, 204, 0.467);
+  color: white;
+  border: none;
+  cursor: pointer;
+}

@@ -1,5 +1,31 @@
 .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 16px;
+    min-height: 80%;
+    max-width: 720px;
+    margin: 32px auto;
+    padding: 40px 24px 56px 24px;
+    background: linear-gradient(120deg, #f8fafc 60%, #e0e7ef 100%);
+    border-radius: 32px;
+    box-shadow: 0 8px 32px rgba(60, 60, 120, 0.13), 0 1.5px 8px rgba(60, 60, 120, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    border: 1.5px solid #e0e7ef;
+    transition: box-shadow 0.2s, background 0.2s;
+
+}
+
+/* 
+.container:hover {
+    box-shadow: 0 12px 40px rgba(60, 60, 120, 0.18), 0 2px 12px rgba(60, 60, 120, 0.09);
+    background: linear-gradient(120deg, #e0e7ef 0%, #f8fafc 100%);
+} */
+
+@media (max-width: 800px) {
+    .container {
+        max-width: 98vw;
+        padding: 18px 2vw 28px 2vw;
+        border-radius: 12px;
+        margin: 12px auto 0 auto;
+        gap: 18px;
+    }
 }

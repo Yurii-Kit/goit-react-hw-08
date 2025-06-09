@@ -1,7 +1,20 @@
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
-  border-bottom: 1px solid #2a363b;
+  justify-content: space-between;
+  padding: 18px 40px;
+  background: linear-gradient(90deg, #e0e7ef 0%, #f8fafc 100%);
+  border-radius: 20px;
+  box-shadow: 0 4px 18px rgba(60, 60, 120, 0.10);
+
+  min-height: 64px;
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    gap: 18px;
+    padding: 14px 8px;
+    border-radius: 12px;
+  }
 }
