@@ -1,11 +1,25 @@
 .link {
-  display: inline-block;
+  color: #222;
   text-decoration: none;
-  padding: 12px;
-  font-weight: 700;
-  color: #2a363b;
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition:
+    background 0.2s,
+    color 0.2s;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-right: 8px;
 }
 
-.link.active {
-  color: #e84a5f;
+.link:hover,
+.link:focus {
+  background: #f0f0f0;
+  color: #ff5100;
+  text-decoration: none;
+}
+
+.active {
+  color: #fff;
+  background: #ff9800;
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.12);
 }

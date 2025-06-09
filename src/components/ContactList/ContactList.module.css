@@ -1,19 +1,31 @@
 .contactList {
   list-style: none;
-  padding: 5px;
-  /* border: 2px solid #141414; */
+  padding: 0px;
+
+
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
+
+
+
 .listItem {
   display: flex;
-
-  justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  border: 2px solid #141414;
-  border-radius: 10px;
-  font-size: 30px;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #f8fafc 0%, #e0e7ef 100%);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(60, 60, 120, 0.08);
+  padding: 18px 24px;
+  /* margin-bottom: 16px; */
+  transition: box-shadow 0.2s, background 0.2s;
+  border: 1px solid #141414;
+}
+
+.listItem:hover {
+  box-shadow: 0 4px 16px rgba(60, 60, 120, 0.18);
+  background: linear-gradient(90deg, #e0e7ef 0%, #f8fafc 100%);
 }

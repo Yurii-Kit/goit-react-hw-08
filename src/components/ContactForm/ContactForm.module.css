@@ -4,6 +4,15 @@
   gap: 1rem;
   border: 1px solid #141414;
   margin-bottom: 1rem;
+  background: linear-gradient(90deg, #f8fafc 0%, #e0e7ef 100%);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(60, 60, 120, 0.08);
+  transition: box-shadow 0.2s, background 0.2s;
+}
+
+.form:hover {
+  box-shadow: 0 4px 16px rgba(60, 60, 120, 0.18);
+  background: linear-gradient(90deg, #e0e7ef 0%, #f8fafc 100%);
 }
 
 .fieldset {

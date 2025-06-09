@@ -1,6 +1,7 @@
 import { Suspense, lazy, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 
 import Layout from '../Layout/Layout';
 import { refreshUser } from '../../redux/auth/operations';
@@ -47,6 +48,7 @@ export default function App() {
           />
         </Routes>
       </Suspense>
+      <Toaster position="top-right" />
     </Layout>
   );
 }
