@@ -23,6 +23,7 @@
   /* margin-bottom: 16px; */
   transition: box-shadow 0.2s, background 0.2s;
   border: 1px solid #141414;
+  border: none;
 }
 
 .listItem:hover {

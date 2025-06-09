@@ -12,13 +12,21 @@
     border: 1.5px solid #e0e7ef;
     transition: box-shadow 0.2s, background 0.2s;
 
+
+
+    background-image: url('https://img.freepik.com/free-photo/particle-lines-futuristic-network-background_53876-129729.jpg?ga=GA1.1.1071278232.1749477155&semt=ais_hybrid&w=740');
+    /* Онлайн-зображення */
+    background-size: cover;
+    /* Адаптує зображення до контейнера */
+    background-position: center;
+    /* Центрує фон */
+    background-repeat: no-repeat;
+    /* Запобігає повторенню */
+
+
 }
 
-/* 
-.container:hover {
-    box-shadow: 0 12px 40px rgba(60, 60, 120, 0.18), 0 2px 12px rgba(60, 60, 120, 0.09);
-    background: linear-gradient(120deg, #e0e7ef 0%, #f8fafc 100%);
-} */
+
 
 @media (max-width: 800px) {
     .container {
