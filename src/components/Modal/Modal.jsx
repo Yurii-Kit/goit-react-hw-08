@@ -34,6 +34,7 @@ export default function Modal({ onClose, onConfirm, contact, action }) {
             <label>
               Name:
               <input
+                className={css.input}
                 type="text"
                 value={editedName}
                 onChange={(event) => setEditedName(event.target.value)}
@@ -42,6 +43,7 @@ export default function Modal({ onClose, onConfirm, contact, action }) {
             <label>
               Number:
               <input
+                className={css.input}
                 type="text"
                 value={editedNumber}
                 onChange={(event) => setEditedNumber(event.target.value)}

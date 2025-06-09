@@ -30,9 +30,11 @@
 
 .input {
   padding: 0.5rem;
-  border: 1px solid #161515;
+  /* border: 1px solid #161515; */
   border-radius: 4px;
   font-size: 1rem;
+  border: none;
+
 }
 
 .button {
